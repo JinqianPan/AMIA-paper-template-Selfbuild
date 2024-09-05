@@ -1,0 +1,62 @@
+\ProvidesPackage{AMIA}
+
+\usepackage{authblk}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{newtxtext,newtxmath}
+\usepackage{sectsty}
+\usepackage[super,comma,sort&compress]{natbib}
+
+
+%==============================
+% Make title
+\makeatletter
+\renewcommand{\maketitle}{
+    \thispagestyle{empty}
+    \bgroup\setlength{\parindent}{0pt}
+    \begin{center}
+        \vspace{-2em}
+        \Large{\bfseries\@title}
+
+        \renewcommand{\Authfont}{\large\bfseries}
+        \renewcommand{\Affilfont}{\large\bfseries}
+        \setlength{\affilsep}{0cm}
+        \vspace{0.25cm}
+        {\@author}
+
+    \end{center}\egroup
+}
+
+\renewcommand\AB@affilsepx{\vspace{0.03cm}, \protect\Affilfont} % make affil as a line
+\renewcommand\AB@authnote[1]{\textsuperscript{#1}} % change the font style for number
+\renewcommand\AB@affilnote[1]{\textsuperscript{#1}} % change the font style for number
+\makeatother
+%==============================
+
+
+
+%==============================
+% Section title size
+\allsectionsfont{\fontsize{10}{13}\selectfont} % font style, size, uppercase
+\subsectionfont{\fontsize{10}{13}\selectfont}
+\subsubsectionfont{\fontsize{10}{13}\selectfont}
+%==============================
+
+
+
+%==============================
+% No page number
+\pagestyle{empty}
+%==============================
+
+
+
+
+
+%==============================
+% Reference list option change
+\makeatletter
+\renewcommand\@biblabel[1]{#1.} % from [1] to 1
+\makeatother %
+% References title center
+\renewcommand{\refname}{\vspace{-1cm} \begin{center}References\end{center} \vspace{-0.5cm}}
+%==============================
