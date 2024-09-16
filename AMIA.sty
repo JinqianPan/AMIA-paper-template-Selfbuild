@@ -5,13 +5,17 @@
 \usepackage{newtxtext,newtxmath}
 \usepackage{sectsty}
 \usepackage[super,comma,sort&compress]{natbib}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{multirow}
 
 
 %==============================
 % Make title
 \makeatletter
 \renewcommand{\maketitle}{
-    \thispagestyle{empty}
+    % \thispagestyle{empty}
     \bgroup\setlength{\parindent}{0pt}
     \begin{center}
         \vspace{-2em}
@@ -26,28 +30,48 @@
     \end{center}\egroup
 }
 
-\renewcommand\AB@affilsepx{\vspace{0.03cm}, \protect\Affilfont} % make affil as a line
+\renewcommand\AB@affilsepx{\vspace{0.03cm}; \protect\Affilfont} % make affil as a line
 \renewcommand\AB@authnote[1]{\textsuperscript{#1}} % change the font style for number
 \renewcommand\AB@affilnote[1]{\textsuperscript{#1}} % change the font style for number
-\makeatother
 %==============================
 
+
+%==============================
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+%==============================
 
 
 %==============================
 % Section title size
 \allsectionsfont{\fontsize{10}{13}\selectfont} % font style, size, uppercase
-\subsectionfont{\fontsize{10}{13}\selectfont}
+\subsectionfont{\fontsize{10}{13}\selectfont\itshape}
 \subsubsectionfont{\fontsize{10}{13}\selectfont}
+
+\titlespacing*{\section}
+  {0pt} % left
+  {0pt} % top
+  {-10pt} % bottom
+
+\titlespacing*{\subsection}
+    {0pt}
+    {0pt}
+    {-10pt}
 %==============================
 
 
-
 %==============================
-% No page number
-\pagestyle{empty}
+% Caption
+\DeclareCaptionLabelSeparator{dot}{.\space} % change : to .
+% \usepackage[labelfont=bf, labelsep=dot,]{caption} % labelsep=dot, dot in previous line
+\usepackage[labelfont=bf, textfont=normalfont, labelsep=dot]{caption} % labelsep=dot, dot in previous line
+\captionsetup[table]{font=bf, singlelinecheck=false} % singlelinecheck=false: Align on the left
+\captionsetup[figure]{font=bf, justification=raggedright, singlelinecheck=false}
+\captionsetup{skip=5pt}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{-10pt}
+\setlength{\floatsep}{23pt plus 5pt minus 5pt}
 %==============================
-
 
 
 
@@ -58,5 +82,5 @@
 \renewcommand\@biblabel[1]{#1.} % from [1] to 1
 \makeatother %
 % References title center
-\renewcommand{\refname}{\vspace{-1cm} \begin{center}References\end{center} \vspace{-0.5cm}}
+\renewcommand{\refname}{\vspace{-0.5cm} \begin{center}References\end{center} \vspace{-1cm}}
 %==============================

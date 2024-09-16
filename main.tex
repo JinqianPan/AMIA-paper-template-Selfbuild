@@ -24,6 +24,34 @@
 \lipsum[3-8]
 \cite{he2016deep}
 
+\begin{figure}
+    \centering
+    \setlength{\abovecaptionskip}{0pt}
+    % \includegraphics[width=0.9\textwidth, trim=1.7cm 7cm 8.5cm 2cm, clip]{img/figure1.pdf} % Could crop PDF
+    \includegraphics[width=0.4\textwidth]{img/example.png}
+    \caption{This is a image.}
+    \label{fig::img}
+\end{figure}
+
+\begin{table}[hbt!]
+\setlength{\abovecaptionskip}{5pt}
+\caption{This is Table 2.}
+\centering
+\resizebox{13cm}{!}{
+\begin{tabular}{cccccc}
+    \toprule
+    \textbf{Table} & \textbf{Table} & \textbf{Within 6 Table} & \textbf{Within 12 Table} & \textbf{Within 24 Table} & \textbf{No Table} \\ 
+    \midrule
+    \multirow{4}{*}{\textbf{Big Table}}   
+        & Table &  &  &  &  \\
+        & Table &  &  &  &  \\
+        & Table &  &  &  &  \\
+        & Table &  &  &  &  \\
+    \cline{1-6}
+\end{tabular}
+}
+\label{tab::reuslt}
+\end{table}
 
 % References
 \bibliographystyle{vancouver}
