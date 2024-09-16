@@ -1,4 +1,4 @@
-# JAMIA LaTeX paper template
+# AMIA LaTeX paper template
 
 The American Medical Informatics Association (AMIA) paper basic template, inspired by [the LaTeX template of AMIA](https://github.com/emir-munoz/amia-paper-template) for the same reasons.
 
